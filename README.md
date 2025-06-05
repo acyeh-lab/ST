@@ -1,5 +1,5 @@
 # Spatial Transcriptomics
-Tips on how to run / analyze ST.  Thanks to Julie Boiko, MD/PhD for initial tips!
+Tips on how to run / analyze ST.  Thanks to Julie Boiko MD, PhD for initial tips!
 
 ## Tissue Analysis Software
 1) Tissue Faxsviewer (open source)
@@ -30,4 +30,15 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
     5.	transcript-metadata.csv.gz
   - Output files will be located in proseg_run_XXXXX.err and .log
   - **Takes about 30 min to 1 hr to run**
+### Convert to Baysor for Xenium Import
+  - From dcjones github: It is possible to use proseg segmentation with Xenium Explorer, but requires a little work. The xeniumranger tool has a command to import segmentation from Baysor. To use this, we must first convert Proseg output to Baysor-compatible formatting.
+  - Run "Proseg_to_Bayor.sh" (see included files).
+  - e.g. ```sbatch Proseg_to_Baysor.sh /fh/fast/hill_g/Albert/Collaboration-Spatial_Seq_Biopsy_Samples/Xenium/Run1_XB9MDD_5_19_25/output-XETG00049__0050413__XE054_50413_3035-4-F-S-A__20250516__213842```
+  - This gives you the following new files in the folder:
+    1.	baysor-cell-polygons.geojson
+    2.	baysor-transcript-metadata.csv
+  - Output files will be located in proseg_to_baysor_XXXXX.err and .log
+  - **Takes about 2 min**
+
+
 
