@@ -1,0 +1,43 @@
+#!/bin/bash
+#SBATCH --job-name=proseg_to_baysor_run
+#SBATCH --output=proseg_to_baysor_%j.log
+#SBATCH --error=proseg_to_baysor_%j.err
+#SBATCH --time=01:00:00
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=32G
+#SBATCH --partition=campus-new
+
+# Note that this script allows you to pass 1 variable from command line (output directory)
+
+# Load Rust module if needed
+module load Rust/1.83.0-GCCcore-13.3.0
+
+# Ensure proseg is in PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+
+
+# Optional: confirm that ProSeg is available
+command -v proseg || { echo "ProSeg is not installed. Please run: cargo install proseg"; exit 1; }
+
+# Check that a directory argument was provided
+if [ -z "$1" ]; then
+  echo "Usage: sbatch run_proseg.slurm <output_directory>"
+  exit 1
+fi
+
+# Assign command-line argument to a variable
+wd="$1"
+
+# Move to the working directory
+cd "$wd" || { echo "Failed to cd to $wd"; exit 1; }
+
+# Confirm current working directory
+pwd
+
+# Run ProSeg
+proseg-to-baysor \
+    transcript-metadata.csv.gz \
+    cell-polygons.geojson.gz \
+    --output-transcript-metadata baysor-transcript-metadata.csv \
+    --output-cell-polygons baysor-cell-polygons.geojson
+
