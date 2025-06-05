@@ -1,5 +1,5 @@
 # Spatial Transcriptomics
-Tips on how to run / analyze ST
+Tips on how to run / analyze ST.  Thanks to Julie Boiko, MD/PhD for initial tips!
 
 ## Tissue Analysis Software
 1) Tissue Faxsviewer (open source)
