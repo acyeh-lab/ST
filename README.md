@@ -20,6 +20,12 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
   - ```echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc```  (just type this once when starting shell we have everything else setup)
   - Now can run proseg below!
 ### Generate Proseg polygons and metadata
+  - Run "Proseg_init.sh" (see included files). This will generate the following files:
+    1.	cell-metadata.csv.gz
+    2.	cell-polygon.geojson.gz
+    3.	cell-polygons-layers.geojson.gz
+    4.	expected-counts.csv.gz
+    5.	transcript-metadata.csv.gz
 
 I made a shell script “Proseg_init.sh” to run this segment.  So for example, run:
 
@@ -29,10 +35,6 @@ Output files will be located in proseg_run_XXXXX.err and .log
 **Takes about 30 min to 1 hr to run.
 
 This gives you the following new files in the folder:
-1.	cell-metadata.csv.gz
-2.	cell-polygon.geojson.gz
-3.	cell-polygons-layers.geojson.gz
-4.	expected-counts.csv.gz
-5.	transcript-metadata.csv.gz
+
 ![image](https://github.com/user-attachments/assets/1adc20c7-9b55-47e0-8fd5-9394e7e1da3b)
 
