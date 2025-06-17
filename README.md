@@ -48,10 +48,16 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
   - **Takes about X min**
     
 ## (4) Analyze Data with Python
-  - In data directory, include the following for our python analysis:
-    1. "proseg"
-    2. "hne"
-    3. "anndata"
+  - In data directory, include the following, which will be used for our python analysis:
+    1. "proseg" = Proseg generated files
+    2. "hne" = H&E files
+    3. "anndata" = Annodated metadata
+    4. "python" = Include python files and Jupyter notebook
+  - In the same directory, other shared folders (used for R and for general intput/output) include:
+    1. "rmd" = R Markdown
+    2. "figs" = Generated figures
+    3. "data" = Data files
+  
   
 
 
