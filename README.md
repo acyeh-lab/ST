@@ -46,7 +46,12 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
   - **Make sure name of run is a unique folder that doesn't already exist, otherwise will get error !**
   - Slurm output files will be located in xeniumranger_XXXXX.err and .log
   - **Takes about X min**
-  - 
-## (4) Covert datasets in R
+    
+## (4) Analyze Data with Python
+  - In data directory, include the following for our python analysis:
+    1. "proseg"
+    2. "hne"
+    3. "anndata"
+  
 
 
