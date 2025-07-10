@@ -48,6 +48,7 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
   - **Takes about X min**
     
 ## (4) Analyze Data with Python
+  - If you need set up Python, particularly for cloud computing, please visit this page: https://github.com/acyeh-lab/python.
   - In data directory, include the following, which will be used for our python analysis:
     1. "proseg" = Proseg generated files
     2. "hne" = H&E files
@@ -57,6 +58,7 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
     1. "rmd" = R Markdown
     2. "figs" = Generated figures
     3. "data" = Data files
+    
   
   
 
