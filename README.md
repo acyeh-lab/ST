@@ -71,8 +71,9 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
     2. "figs" = Generated figures
     3. "data" = Data files
    
-# Useful Python Libraries
+# Useful Python Libraries and Tips
   - Use "CV2" library (computer vision) to manually overlay images.
+  - ipykernel allows you to switch libraries
     
   
   
