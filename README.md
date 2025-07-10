@@ -70,6 +70,9 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
     1. "rmd" = R Markdown
     2. "figs" = Generated figures
     3. "data" = Data files
+   
+# Useful Python Libraries
+  - Use "CV2" library (computer vision) to manually overlay images.
     
   
   
