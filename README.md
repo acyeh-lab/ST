@@ -49,7 +49,7 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
 
 # Image Overlay:
 - Use QuPATH to get DAPI/RNA ish image, export as .ome.tiff file. 
-- Open up ISH/H&E file.  Note that we will need landmarks for overlay, so H&E is great; and ISH should include something like DAPI to correlated areas.
+- Open up ISH/H&E file (e.g. ".vsi" file format).  Note that we will need landmarks for overlay, so H&E is great; and ISH should include something like DAPI to correlated areas.
   - Go to “File” -> “Export Images” -> “OME TIFF”, and use the following parameters
     - Tilesize 1024
     - Pyramidal Downsampling: 2
