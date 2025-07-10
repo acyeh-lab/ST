@@ -46,8 +46,20 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
   - **Make sure name of run is a unique folder that doesn't already exist, otherwise will get error !**
   - Slurm output files will be located in xeniumranger_XXXXX.err and .log
   - **Takes about X min**
+
+# Image Overlay:
+- Use QuPATH to get DAPI/RNA ish image, export as .ome.tiff file. 
+- Open up ISH/H&E file.  Note that we will need landmarks for overlay, so H&E is great; and ISH should include something like DAPI to correlated areas.
+  - Go to “File” -> “Export Images” -> “OME TIFF”, and use the following parameters
+    - Tilesize 1024
+    - Pyramidal Downsampling: 2
+    - ZLIP library (lossless)
+  - Choose parallelize export to make it faster
+  - Now open this file from Xenium Explorer
+  - To export alignment file (so can overlay in python script), select the channel in Xenium Explorer under “Images”, then click on “…”, and select “Download Alignment File”.  The default output name for this file is “ISH_alignment_files.zip”
+  - Repeat this for H&E
     
-## (4) Analyze Data with Python
+# Analyze Data with Python
   - If you need set up Python, particularly for cloud computing, please visit this page: https://github.com/acyeh-lab/python.
   - In data directory, include the following, which will be used for our python analysis:
     1. "proseg" = Proseg generated files
