@@ -70,7 +70,13 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
     1. "rmd" = R Markdown
     2. "figs" = Generated figures
     3. "data" = Data files
-   
+
+# Converting .parquet to .csv.gz
+  - transcripts.parquet is what Xenium outputs by default: a columnar, binary format that’s efficient for storage and fast with engines like PyArrow or Spark.
+  - Many downstream bioinformatics tools (especially those in R/Seurat or Python packages not using Arrow) expect plain text formats like .csv, .tsv, or .csv.gz.
+  - For example, if you want to pass transcripts into Seurat (ReadXenium()) or scan them in quickly with pandas, you often need .csv.gz.
+
+
 # Useful Python Libraries and Tips
   - Use "CV2" library (computer vision) to manually overlay images.
   - ipykernel allows you to switch libraries
