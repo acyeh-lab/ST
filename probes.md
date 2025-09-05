@@ -22,5 +22,6 @@ transcripts = duckdb.sql(
     WHERE feature_name ~ '..._...\\d'
     """
 ).to_df()
-
-- This works because our custom bacterial probes are in the format XXX_XXXX.
+```
+- transcripts_file should be a parquet file generated AFTER Xeniumranger is applied (not before)
+- Note the regex '..._...\\d' works because our custom bacterial probes are in the format XXX_XXXX.
