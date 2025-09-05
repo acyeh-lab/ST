@@ -66,6 +66,8 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
     2. "hne" = H&E files
     3. "anndata" = Annodated metadata
     4. "python" = Include python files and Jupyter notebook
+    5. "ish" = Contains ISH images
+    6. "raw" = not really raw, but post-xeniumranger files (inluding transcript.parquest and converted transcript.csv.gz files)
   - In the same directory, other shared folders (used for R and for general intput/output) include:
     1. "rmd" = R Markdown
     2. "figs" = Generated figures
