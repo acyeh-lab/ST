@@ -75,6 +75,7 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
   - transcripts.parquet is what Xenium outputs by default: a columnar, binary format that’s efficient for storage and fast with engines like PyArrow or Spark.
   - Many downstream bioinformatics tools (especially those in R/Seurat or Python packages not using Arrow) expect plain text formats like .csv, .tsv, or .csv.gz.
   - For example, if you want to pass transcripts into Seurat (ReadXenium()) or scan them in quickly with pandas, you often need .csv.gz.
+  - See `parquet.md` in this repository for more information
 
 
 # Useful Python Libraries and Tips
