@@ -1,6 +1,6 @@
 
 
-# Use DuckDB for loading data
+# Loading Probe Data
 
 ## Why Use DuckDB for Transcript Queries
 
