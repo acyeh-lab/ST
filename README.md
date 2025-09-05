@@ -45,7 +45,7 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
   - e.g. ```sbatch Xeniumranger.sh /fh/fast/hill_g/Albert/Collaboration-Spatial_Seq_Biopsy_Samples/Xenium/Run1_XB9MDD_5_19_25/output-XETG00049__0050413__XE054_50413_3035-4-F-S-A__20250516__213842 RUN1``` Note that there are 2 input variables (file directory and name of run).
   - **Make sure name of run is a unique folder that doesn't already exist, otherwise will get error !**
   - Slurm output files will be located in xeniumranger_XXXXX.err and .log
-  - **Takes about X min**
+  - **Takes about X min** 10:43 AM - 
 
 # Image Overlay:
 - Use QuPATH to get DAPI/RNA ish image, export as .ome.tiff file. 
