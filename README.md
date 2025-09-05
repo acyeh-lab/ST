@@ -86,7 +86,9 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
   - Use "CV2" library (computer vision) to manually overlay images.
   - ipykernel allows you to switch libraries
     
-  
+
+# Workflow for bacterial / custom probe analysis:
+  - See `probes.md` in this repository for more information
   
 
 
