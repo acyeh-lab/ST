@@ -22,3 +22,5 @@ transcripts = duckdb.sql(
     WHERE feature_name ~ '..._...\\d'
     """
 ).to_df()
+
+- This works because our custom bacterial probes are in the format XXX_XXXX.
