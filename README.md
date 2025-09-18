@@ -55,7 +55,7 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
     - Pyramidal Downsampling: 2
     - ZLIP library (lossless)
   - Choose parallelize export to make it faster
-  - Now open this file from Xenium Explorer
+  - Now open this file from Xenium Explorer (Go the "Images" tab and select "Add Images" icon).
   - To export alignment file (so can overlay in python script), select the channel in Xenium Explorer under “Images”, then click on “…”, and select “Download Alignment File”.  The default output name for this file is “ISH_alignment_files.zip”
   - Repeat this for H&E
     
