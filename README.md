@@ -38,6 +38,9 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
   git clone https://github.com/dcjones/proseg proseg
   cd /fh/fast/hill_g/Albert/Collaboration-Spatial_Seq_Biopsy_Samples/proseg
   cargo install --path . --force
+
+  which proseg
+  proseg --version # Should give you proseg 3.1.0
   ```
 
 ### B. Generate Proseg polygons and metadata
