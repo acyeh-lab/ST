@@ -19,6 +19,18 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
   - ```cargo install proseg```
   - ```echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc```  (just type this once when starting shell we have everything else setup)
   - Now can run proseg below!
+  - 1/27/26: Note that updated version of proseg require newer version of rust not available on cluster:
+  ```
+  - # install rustup (user-space)
+  - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  - # activate in current shell
+  - source "$HOME/.cargo/env"
+  - # install and select nightly (safest for edition2024)
+  - rustup toolchain install nightly
+  - rustup default nightly
+  ```
+
+cargo --version
 ### B. Generate Proseg polygons and metadata
   - Run "Proseg_init.sh" (see included files).
   - e.g. ```sbatch Proseg_init.sh /fh/fast/hill_g/Albert/Collaboration-Spatial_Seq_Biopsy_Samples/Xenium/Run1_XB9MDD_5_19_25/output-XETG00049__0050413__XE054_50413_3035-4-F-S-A__20250516__213842```
