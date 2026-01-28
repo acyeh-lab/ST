@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=proseg_run_singular
-#SBATCH --output=proseg_run_%j.log
-#SBATCH --error=proseg_run_%j.err
+#SBATCH --output=log/proseg_run_%j.log
+#SBATCH --error=log/proseg_run_%j.err
 #SBATCH --time=01:00:00
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=32G
