@@ -57,3 +57,16 @@ cell_id
 ```
 This is close enough to Xenium format, but column names differ, so do NOT use ```--xenium```
 
+So to run, use the following command:
+```
+proseg --csv rna/transcript_table.csv.gz \
+  --gene-column gene_name \
+  --x-column x_pixel_coordinate \
+  --y-column y_pixel_coordinate \
+  --z-column z_level \
+  --cell-id-column cell_id \
+  --confidence-column confidence_score \
+  --output-spatialdata A01-proseg.zarr \
+  --nthreads 16
+```
+
