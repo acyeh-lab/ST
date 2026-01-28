@@ -30,6 +30,7 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
   # install and select nightly (safest for edition2024)
   rustup toolchain install nightly
   rustup default nightly
+  cargo --version
 
   # re-install proseg
   cd /fh/fast/hill_g/Albert/Collaboration-Spatial_Seq_Biopsy_Samples
@@ -39,7 +40,6 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
   cargo install --path . --force
   ```
 
-cargo --version
 ### B. Generate Proseg polygons and metadata
   - Run "Proseg_init.sh" (see included files).
   - e.g. ```sbatch Proseg_init.sh /fh/fast/hill_g/Albert/Collaboration-Spatial_Seq_Biopsy_Samples/Xenium/Run1_XB9MDD_5_19_25/output-XETG00049__0050413__XE054_50413_3035-4-F-S-A__20250516__213842```
