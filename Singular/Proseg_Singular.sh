@@ -33,6 +33,8 @@ cd "$wd" || { echo "Failed to cd to $wd"; exit 1; }
 
 # Confirm current working directory
 pwd
+echo "Using proseg at: $(which proseg)"
+echo "Proseg version: $(proseg --version)"
 
 # Run ProSeg
 proseg --csv "$wd/rna/transcript_table.csv.gz" \
