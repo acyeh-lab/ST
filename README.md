@@ -21,13 +21,22 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
   - Now can run proseg below!
   - 1/27/26: Note that updated version of proseg require newer version of rust not available on cluster:
   ```
-  - # install rustup (user-space)
-  - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-  - # activate in current shell
-  - source "$HOME/.cargo/env"
-  - # install and select nightly (safest for edition2024)
-  - rustup toolchain install nightly
-  - rustup default nightly
+  # install rustup (user-space)
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+  # activate in current shell
+  source "$HOME/.cargo/env"
+
+  # install and select nightly (safest for edition2024)
+  rustup toolchain install nightly
+  rustup default nightly
+
+  # re-install proseg
+  cd /fh/fast/hill_g/Albert/Collaboration-Spatial_Seq_Biopsy_Samples
+  mv proseg proseg_old_$(date +%Y%m%d)
+  git clone https://github.com/dcjones/proseg proseg
+  cd /fh/fast/hill_g/Albert/Collaboration-Spatial_Seq_Biopsy_Samples/proseg
+  cargo install --path . --force
   ```
 
 cargo --version
