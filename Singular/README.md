@@ -39,6 +39,6 @@ Each folder contains the following:
    - cell_metadata.csv.gz
    - clustering_umap.csv.gz
    - dgex.csv.gz
-   - feature_matrix.hg (bundled feature matrix file, analogous to HDF5/AnnData/10x H5)
+   - feature_matrix.h5 (bundled feature matrix file, analogous to HDF5/AnnData/10x H5; also largest file)
 
 
