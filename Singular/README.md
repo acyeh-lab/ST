@@ -70,8 +70,8 @@ proseg --csv rna/transcript_table.csv.gz \
   --nthreads 16
 ```
 
-to submit the job, use:
+to submit the job, usem for example:
 ```
-sbatch Proseg_init_singular.sh
+sbatch Proseg_Singular.sh /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01
 ```
 
