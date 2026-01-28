@@ -11,12 +11,34 @@ g4-012-054-FC2-L001_5WtNECt2qiMdhgeK -> customer_output -> A01-H01
 
 Each folder contains the following:
  - diagnostics
+   - transcript_table.parquet
  - g4x_viewer
+   - .bin
+   - .ome.tiff
+   - .tar
+   - _HE.ome.tiff
+   - _nuclear.ome.tiff
+   - _run_metadata.json 
  - h_and_e
+   - h_ane_e_thumbnail.jpg
+   - nulear_thumbnail.png
  - metrics
+   - core_metrics.csv
+   - per_area_metrics.csv
+   - protein_core_metrics.csv
+   - transcript_core_metrics.csv
  - protein
+   - ATPase, CD11c, CD20, CD3, CD31, CD4, CD45, CD68, CD8, FOXP3, HLA-DR, Isotype, Ki67, PD1, PDL1, PanCK, asMA.thumbnail.jpg (these are protien level data)
  - rna
+   - transcript_table.csv.gz
  - segmentation
+   - segmentation_mask.npz
  - single_cell_data
+   - cell_by_protein.csv.gz
+   - cell_by_transcript.csv.gz
+   - cell_metadata.csv.gz
+   - clustering_umap.csv.gz
+   - dgex.csv.gz
+   - feature_matrix.hg
 
 
