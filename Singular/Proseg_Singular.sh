@@ -35,7 +35,7 @@ cd "$wd" || { echo "Failed to cd to $wd"; exit 1; }
 pwd
 
 # Run ProSeg
-proseg --csv "$wd/rna/transcript_table.csv.gz" \
+proseg "$wd/rna/transcript_table.csv.gz" \
   --gene-column gene_name \
   --x-column x_pixel_coordinate \
   --y-column y_pixel_coordinate \
