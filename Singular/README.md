@@ -1,7 +1,7 @@
 # Spatial Transcriptomics
 Tips on how to run / analyze ST using the Singular Platform.  This is bootstrapped by myself.
 
-## PHysical Slide
+## Physical Slide
 Singular slides come in 2 formats: the 32 slot format (4x8 4mm squares) or the 10 slot (2x5 1cm squares).
 
 ## File Format
