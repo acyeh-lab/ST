@@ -70,3 +70,8 @@ proseg --csv rna/transcript_table.csv.gz \
   --nthreads 16
 ```
 
+to submit the job, use:
+```
+sbatch Proseg_init_singular.sh
+```
+
