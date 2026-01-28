@@ -41,4 +41,19 @@ Each folder contains the following:
    - dgex.csv.gz
    - feature_matrix.h5 (bundled feature matrix file, analogous to HDF5/AnnData/10x H5; also largest file)
 
+## Running Proseg
+```
+ayeh@rhino02:/fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01/rna$ zcat transcript_table.csv.gz | head -n 1
+y_pixel_coordinate,x_pixel_coordinate,z_level,gene_name,confidence_score,cell_id
+```
+Thus, the Singular transcript table header is:
+```
+y_pixel_coordinate,
+x_pixel_coordinate,
+z_level,
+gene_name,
+confidence_score,
+cell_id
+```
+This is close enough to Xenium format, but column names differ, so do NOT use ```--xenium```
 
