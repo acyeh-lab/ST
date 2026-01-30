@@ -53,11 +53,27 @@ micromamba install -c conda-forge \
   scanpy squidpy spatialdata \
   jupyterlab ipykernel \
   -y
-pip install "git+https://github.com/scverse/spatialdata-io.git@refs/pull/281/head"
 python -m ipykernel install \
   --user \
   --name spatial-singular \
   --display-name "Python (spatial-singular)"
+```
+Now to install the PR for analyzing singular dataset:
+```
+cd /fh/fast/hill_g/Albert/Collaboration-Spatial_Seq_Biopsy_Samples
+git clone https://github.com/scverse/spatialdata-io.git
+cd spatialdata-io
+git fetch origin pull/281/head:pr-281
+git checkout pr-281
+python -m pip install --no-cache-dir -e .
+```
+Now check if the following returns true:
+```
+python - << 'EOF'
+import spatialdata_io as sio
+print("Has g4x:", hasattr(sio, "g4x"))
+print("Loaded from:", sio.__file__)
+EOF
 ```
 
 ## Running Proseg (old)
