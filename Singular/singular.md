@@ -1,4 +1,4 @@
-# Depoisted by Derrik Gratz on 10/30/25
+# Initially written by Derrik Gratz on 10/30/25
 
 # Singular data analysis guide
 
