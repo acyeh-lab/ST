@@ -1,3 +1,5 @@
+# Depoisted by Derrik Gratz on 10/30/25
+
 # Singular data analysis guide
 
 This guide is for working with Singular g4x data after sequencing. The platform is still in development (as of 2025-10-27), so there are not many published resources for working with data in 3rd party ecosystems. This is likely to change as Singular is developing resources internally, but they are not yet public. If you are referring to this sometime in the future, check Singular's website for updated guides.
