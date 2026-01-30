@@ -41,7 +41,7 @@ Each folder contains the following:
    - dgex.csv.gz
    - feature_matrix.h5 (bundled feature matrix file, analogous to HDF5/AnnData/10x H5; also largest file)
 
-## Creating python environment
+## Creating python environment (tested 1/30/26)
 ```
 micromamba create -n spatial-singular -c conda-forge python=3.11 -y
 micromamba activate spatial-singular
