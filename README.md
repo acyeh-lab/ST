@@ -14,7 +14,8 @@ a.	Change chrome download to: X:\fast\hill_g\Albert\Collaboration-Spatial_Seq_Bi
 ## (2) Custom segmentation with Proseg
 ### A. Install Proseg locally on your machine per https://github.com/dcjones/proseg. (it will have you clone the github repository and then run something in cargo to install Proseg)
   - I made this folder: /fh/fast/hill_g/Albert/Collaboration-Spatial_Seq_Biopsy_Samples/proseg
-  ``` (just type this once when starting shell we have everything else setup)
+  - (just type this once when starting shell we have everything else setup)
+  ``` 
   git clone https://github.com/dcjones/proseg
   ml Rust/1.83.0-GCCcore-13.3.0
   cargo install proseg
