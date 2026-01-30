@@ -41,7 +41,26 @@ Each folder contains the following:
    - dgex.csv.gz
    - feature_matrix.h5 (bundled feature matrix file, analogous to HDF5/AnnData/10x H5; also largest file)
 
-## Running Proseg
+## Creating python environment
+```
+micromamba create -n spatial-singular -c conda-forge python=3.11 -y
+micromamba activate spatial-singular
+micromamba install -c conda-forge \
+  numpy pandas scipy \
+  matplotlib seaborn \
+  shapely geopandas \
+  rasterio pillow \
+  scanpy squidpy spatialdata \
+  jupyterlab ipykernel \
+  -y
+pip install "git+https://github.com/scverse/spatialdata-io.git@refs/pull/281/head"
+python -m ipykernel install \
+  --user \
+  --name spatial-singular \
+  --display-name "Python (spatial-singular)"
+```
+
+## Running Proseg (old)
 ```
 ayeh@rhino02:/fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01/rna$ zcat transcript_table.csv.gz | head -n 1
 y_pixel_coordinate,x_pixel_coordinate,z_level,gene_name,confidence_score,cell_id
