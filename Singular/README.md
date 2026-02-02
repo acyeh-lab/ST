@@ -153,11 +153,12 @@ This is close enough to Xenium format, but column names differ, so do NOT use ``
 
 Dan Jones recommended building .zarr files above then running:
 ```
+Correspodance 1/28/26
 I have successfully run proseg on singular data, but I haven't fully explored how to get optimal results. The process we used was a little involved:
-
 Derrik converted the raw data to spatialdata zarr files using an unreleased branch of the spatialdata-io package here: https://github.com/scverse/spatialdata-io/pull/281
-
 I then ran proseg on those files using this command:
+```
+
 ```
         proseg \
             --x-column x \
