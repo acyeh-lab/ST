@@ -58,7 +58,8 @@ python -m ipykernel install \
   --name spatial-singular \
   --display-name "Python (spatial-singular)"
 ```
-Now to install the PR for analyzing singular dataset:
+Now to install the PR (per Derrick / Daniel, the PR is to convert Singular raw dataset to spatialdata zarr files) for analyzing singular dataset:
+https://github.com/scverse/spatialdata-io/pull/281 (last accessed 2/1/26)
 ```
 cd /fh/fast/hill_g/Albert/Collaboration-Spatial_Seq_Biopsy_Samples
 git clone https://github.com/scverse/spatialdata-io.git
