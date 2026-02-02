@@ -30,10 +30,10 @@
 # ----------
 # Submit with sbatch, passing ONE argument: the input zarr path.
 #
-#   sbatch run_proseg_singular.slurm /path/to/A01.zarr
+#   sbatch Proseg_Singular.sh /path/to/A01.zarr
 #
 # Example:
-#   sbatch run_proseg_singular.slurm \
+#   sbatch Proseg_Singular.sh\
 #     /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/.../A01/A01.zarr
 #
 # Outputs
