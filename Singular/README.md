@@ -76,6 +76,16 @@ print("Has g4x:", hasattr(sio, "g4x"))
 print("Loaded from:", sio.__file__)
 EOF
 ```
+## Now opening singlar file with PR
+
+Example below - note that have to point to parent folder containing all the subfolders!
+```
+from spatialdata_io import g4x
+sdata = g4x.read(
+    "/fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01"
+)
+```
+
 
 ## Running Proseg (old)
 ```
