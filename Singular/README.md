@@ -30,7 +30,7 @@ Each folder contains the following:
  - **protein** (usaully IF intensity renderings)
    - ATPase, CD11c, CD20, CD3, CD31, CD4, CD45, CD68, CD8, FOXP3, HLA-DR, Isotype, Ki67, PD1, PDL1, PanCK, asMA.thumbnail.jpg (these are protien level data)
  - **rna** 
-   - transcript_table.csv.gz (gzip-compressed csv version of the same transcript detection table as the Parquet; maximumum compatibility but slower/bigger than Parquet)
+   - transcript_table.csv.gz (gzip-compressed csv version of the same transcript detection table as the Parquet; maximumum compatibility but slower/bigger than Parquet). This file also contains confidence scores which we can play around with to adjust cutoff.
  - **segmentation**
    - segmentation_mask.npz
  - **single_cell_data** (per-cell tables + matrices)
