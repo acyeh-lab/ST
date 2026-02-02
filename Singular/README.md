@@ -85,6 +85,49 @@ sdata = g4x(
     "/fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01"
 )
 ```
+This automatically saves a .zarr file in the folder:
+```
+SpatialData object (backed by Zarr):
+/fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/
+g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01/A01.zarr
+
+├── Images
+│   ├── eosin
+│   │   └── DataTree[cyx]  (1, 19200, 15232) → (1, 9600, 7616)
+│   ├── h_and_e
+│   │   └── DataTree[cyx]  (3, 19200, 15232) → (3, 9600, 7616)
+│   ├── nuclear
+│   │   └── DataTree[cyx]  (1, 19200, 15232) → (1, 9600, 7616)
+│   └── protein
+│       └── DataTree[cyx]  (17, 19200, 15232) → (17, 9600, 7616)
+│
+├── Labels
+│   ├── nuclei
+│   │   └── DataArray[yx]  (19200, 15232)
+│   └── nuclei_exp
+│       └── DataArray[yx]  (19200, 15232)
+│
+├── Points
+│   └── transcripts
+│       └── DataFrame (Delayed)  shape: (<Delayed>, 6)
+│
+├── Shapes
+│   ├── nuclei_shapes
+│   │   └── GeoDataFrame  shape: (299,758, 1)
+│   └── nuclei_exp_shapes
+│       └── GeoDataFrame  shape: (299,758, 1)
+│
+└── Tables
+    └── table
+        └── AnnData  (299,758 cells × 391 features)
+
+Coordinate systems
+└── global
+    ├── Images: eosin, h_and_e, nuclear, protein
+    ├── Labels: nuclei, nuclei_exp
+    ├── Points: transcripts
+    └── Shapes: nuclei_shapes, nuclei_exp_shapes
+```
 
 
 ## Running Proseg (old)
