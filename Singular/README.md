@@ -177,8 +177,13 @@ I then ran proseg on those files using this command:
            singular-input.zarr
 ```
 
-to submit the job, usem for example:
+To submit the job, usem for example:
 ```
 sbatch Proseg_Singular.sh /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01
+```
+This will give input/output zarr files as follows, for example:
+```
+[INFO] Input zarr:  /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01/A01.zarr
+[INFO] Output zarr: /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01/proseg-output.zarr
 ```
 
