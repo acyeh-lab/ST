@@ -135,7 +135,7 @@ sbatch singular_zarr.sh \
      g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01
 ```
 
-## Running Proseg (old)
+## Running Proseg (courtsey of Dan Jones)
 ```
 ayeh@rhino02:/fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01/rna$ zcat transcript_table.csv.gz | head -n 1
 y_pixel_coordinate,x_pixel_coordinate,z_level,gene_name,confidence_score,cell_id
@@ -151,17 +151,29 @@ cell_id
 ```
 This is close enough to Xenium format, but column names differ, so do NOT use ```--xenium```
 
-So to run, use the following command:
+Dan Jones recommended building .zarr files above then running:
 ```
-proseg --csv rna/transcript_table.csv.gz \
-  --gene-column gene_name \
-  --x-column x_pixel_coordinate \
-  --y-column y_pixel_coordinate \
-  --z-column z_level \
-  --cell-id-column cell_id \
-  --confidence-column confidence_score \
-  --output-spatialdata A01-proseg.zarr \
-  --nthreads 16
+I have successfully run proseg on singular data, but I haven't fully explored how to get optimal results. The process we used was a little involved:
+
+Derrik converted the raw data to spatialdata zarr files using an unreleased branch of the spatialdata-io package here: https://github.com/scverse/spatialdata-io/pull/281
+
+I then ran proseg on those files using this command:
+```
+        proseg \
+            --x-column x \
+            --y-column y \
+            --z-column z_level \
+            --gene-column gene_name \
+            --cell-id-column cell_id \
+            --cell-id-unassigned 0 \
+            --coordinate-scale 0.3125 \
+            --excluded-genes gdna \
+            --zarr-shape nuclei_shapes \
+            --zarr-shape-geometry-column geometry \
+            --zarr-shape-cell-id-column label \
+            --zarr \
+            --output-spatialdata proseg-output.zarr \
+           singular-input.zarr
 ```
 
 to submit the job, usem for example:
