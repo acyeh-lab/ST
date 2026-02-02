@@ -128,7 +128,12 @@ Coordinate systems
     ├── Points: transcripts
     └── Shapes: nuclei_shapes, nuclei_exp_shapes
 ```
-
+To run this from the computing cluster, submit the shell script "singular_zarr.sh":
+```
+sbatch singular_zarr.sh \
+     /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/\
+     g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01
+```
 
 ## Running Proseg (old)
 ```
