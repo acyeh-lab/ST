@@ -186,4 +186,9 @@ This will give input/output zarr files as follows, for example:
 [INFO] Input zarr:  /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01/A01.zarr
 [INFO] Output zarr: /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01/proseg-output.zarr
 ```
-
+## Comparing UMAP from Singular default vs. Proseg
+Use the shell script: run_spatial_singular_umap.sh.
+```
+sbatch run_spatial_singular_umap.sh \
+   /fh/fast/hill_g/Albert/.../customer_output/A01
+```
