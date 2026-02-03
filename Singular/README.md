@@ -196,3 +196,4 @@ sbatch run_spatial_singular_umap.sh \
 ```
 
 ## Now try to see what happens to proseg results if we filter by confidence scores
+Idea here is to filter low-confidence transcripts BEFORE running proseg.
