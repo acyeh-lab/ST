@@ -76,7 +76,7 @@ print("Has g4x:", hasattr(sio, "g4x"))
 print("Loaded from:", sio.__file__)
 EOF
 ```
-## Now opening singlar file with PR
+## Now opening singlar file with PR and creating .zarr file
 
 Example below - note that have to point to parent folder containing all the subfolders!
 ```
@@ -130,10 +130,12 @@ Coordinate systems
 ```
 To run this from the computing cluster, submit the shell script "singular_zarr.sh":
 ```
+## Takes about 30 minutes
 sbatch singular_zarr.sh \
      /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/\
      g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01
 ```
+
 
 ## Running Proseg (courtsey of Dan Jones)
 ```
