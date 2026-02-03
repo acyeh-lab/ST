@@ -192,3 +192,5 @@ Use the shell script: run_spatial_singular_umap.sh.
 sbatch run_spatial_singular_umap.sh \
    /fh/fast/hill_g/Albert/.../customer_output/A01
 ```
+
+## Now try to see what happens to proseg results if we filter by confidence scores
