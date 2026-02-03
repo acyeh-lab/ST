@@ -192,7 +192,7 @@ This will give input/output zarr files as follows, for example:
 Use the shell script: run_spatial_singular_umap.sh.
 ```
 sbatch run_spatial_singular_umap.sh \
-   /fh/fast/hill_g/Albert/.../customer_output/A01
+      /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/C01
 ```
 
 ## Now try to see what happens to proseg results if we filter by confidence scores
