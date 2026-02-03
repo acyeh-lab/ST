@@ -177,7 +177,7 @@ I then ran proseg on those files using this command:
            singular-input.zarr
 ```
 
-To submit the job, usem for example:
+To submit the job in slurm, here is an example:
 ```
 sbatch Proseg_Singular.sh /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01
 ```
