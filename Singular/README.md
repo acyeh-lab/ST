@@ -227,5 +227,4 @@ Schema([
   ('TXUID', String)
 ])
 ```
-
-We look at the
+'meanQS' is where the confidence data is stored
