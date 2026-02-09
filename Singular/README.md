@@ -250,3 +250,7 @@ QS tells you how well something was read
 confidence_score tells you whether it should be believed
 
 Now we build a side-by-side plot that can be run in shell - "plot_meanQS_confidence.sh"
+
+```
+sbatch plot_meanQS_confidence.sh /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/B01
+```
