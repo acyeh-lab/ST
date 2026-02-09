@@ -235,4 +235,13 @@ If we look at the .csv.gz file (/rna/transcript_table.csv.gz) file
 python3 -c 'import polars as pl, sys; print(pl.scan_csv(sys.argv[1]).schema)' transcript_table.csv.gz
 ```
 We see the following format:
-
+```
+Schema([
+  ('y_pixel_coordinate', Float64),
+  ('x_pixel_coordinate', Float64),
+  ('z_level', Int64),
+  ('gene_name', String),
+  ('confidence_score', Float64),
+  ('cell_id', Int64)
+])
+```
