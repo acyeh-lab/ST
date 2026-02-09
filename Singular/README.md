@@ -204,3 +204,28 @@ filter transcripts (confidence ≥ X)
 rebuild SpatialData Zarr
   ↓
 run ProSeg on filtered Zarr
+
+## Parquet file:
+First, we will look at the data in the "diagnostics/transcript_table.parquet" file.  Note that there is also a file "rna/transcript_table.csv.gz", but the parquet file is usually loaded by the g4x function to build a .zarr
+If we look the .parquet file:
+```
+python3 -c 'import polars as pl, sys; print(pl.scan_parquet(sys.argv[1]).schema)' transcript_table.parquet
+```
+We see the following format
+
+```
+Schema([
+  ('x_coord_shift', Float64),
+  ('y_coord_shift', Float64),
+  ('z', Int64),
+  ('demuxed', Boolean),
+  ('transcript_condensed', String),
+  ('meanQS', Float64),
+  ('cell_id', UInt32),
+  ('sequence_to_demux', String),
+  ('transcript', String),
+  ('TXUID', String)
+])
+```
+
+We look at the
