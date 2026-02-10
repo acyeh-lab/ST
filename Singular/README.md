@@ -135,8 +135,13 @@ sbatch singular_zarr.sh \
      /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/\
      g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01
 ```
-Note that if there are any extra files in there (including other .zarr files), it can mess up the .zarr output!
+**Note that if there are any extra files in there (including other .zarr files), it can mess up the .zarr output!
+**The script works on an untouched folder
+**If you change name of .parquet file from "transcript_table.parquet", does it work?
 
+PENDING 46281244 - run again after .zarr file made - seems to work
+PENDING 46281287 - run after renaming .parquet file -  Seems to work; we will probably need to make a separate folder with all original parquet files. 
+PENDING 46292287 - run after deleting .parquest file
 
 ## Running Proseg (courtsey of Dan Jones)
 ```
