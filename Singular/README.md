@@ -139,9 +139,7 @@ sbatch singular_zarr.sh \
 **The script works on an untouched folder
 **If you change name of .parquet file from "transcript_table.parquet", does it work?
 
-PENDING 46281244 - run again after .zarr file made - seems to work
-PENDING 46281287 - run after renaming .parquet file -  Seems to work; we will probably need to make a separate folder with all original parquet files. 
-PENDING 46292287 - run after deleting .parquest file
+- PENDING 46281244 - run again after .zarr file made - seems to work
 
 ## Running Proseg (courtsey of Dan Jones)
 ```
@@ -260,3 +258,9 @@ Now we build a side-by-side plot that can be run in shell - "plot_meanQS_confide
 ```
 sbatch plot_meanQS_confidence.sh /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/B01
 ```
+- We look at whether the .parquet file is dispensible for the g4x load:
+- PENDING 46281287 - run after renaming .parquet file -  Seems to work; we will probably need to make a separate folder with all original parquet files. 
+- PENDING 46292287 - run after deleting .parquest file
+
+- generate a new folder here: "g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/original_parquets" to put all the original parquet files in there
+
