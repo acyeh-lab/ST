@@ -135,6 +135,7 @@ sbatch singular_zarr.sh \
      /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/\
      g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01
 ```
+Note that if there are any extra files in there (including other .zarr files), it can mess up the .zarr output!
 
 
 ## Running Proseg (courtsey of Dan Jones)
