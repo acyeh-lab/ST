@@ -1,6 +1,17 @@
 # Spatial Transcriptomics
 Tips on how to run / analyze ST using the Singular Platform.  This is bootstrapped by myself.
 
+Overall workflow:
+```
+filter_transcripts_confidence.sh # Optional if want to filter transcripts based on confidence - default set to 20 from rna/transcript_table.csv.gz file
+  ↓
+singular_zarr.sh # builds zarr file after usign g4x() pull command
+  ↓
+Proseg_Singular.sh # builds proseg mask
+  ↓
+run_spatial_singular_umap.sh # compares proseg umap vs. default umap
+```
+
 ## Physical Slide
 Singular slides come in 2 formats: the 32 slot format (4x8 4mm squares) or the 10 slot (2x5 1cm squares).
 
