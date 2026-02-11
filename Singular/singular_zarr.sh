@@ -85,6 +85,8 @@ import os, sys
 from pathlib import Path
 from spatialdata_io import g4x
 
+os.environ["TERM"] = "dumb"
+
 input_dir = Path(r"$INPUT_DIR")
 
 print(f"[python] Reading: {input_dir}", file=sys.stderr)
