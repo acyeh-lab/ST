@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
-
 #SBATCH --job-name=plot_confidence
 #SBATCH --output=logs/filter_confidence_%j.out
 #SBATCH --error=logs/filter_confidence_%j.err
@@ -27,11 +25,12 @@ set -euo pipefail
 #   - Lazy + streaming write (memory efficient)
 #
 # Usage:
-#   sbatch filter_transcripts_conf20.sh /path/to/run_folder
+#   sbatch filter_transcripts_confidence.sh /path/to/run_folder
 #
 # Optional:
-#   sbatch --export=ALL,THRESH=30 filter_transcripts_conf20.sh /path/to/run
+#   sbatch --export=ALL,THRESH=30 filter_transcripts_confidence.sh /path/to/run
 # ==============================================================================
+set -euo pipefail
 
 ENV_PREFIX="/home/ayeh/micromamba/envs/spatial-singular"
 
@@ -118,12 +117,16 @@ PY
 
 echo "[INFO] Finished: $(date)"
 
-# ---- Copy Slurm stdout into input directory ----
+# ---- Copy Slurm stdout into input directory (robust) ----
 if [[ -n "${SLURM_JOB_ID:-}" ]]; then
-    SLURM_OUT="filter_conf20.${SLURM_JOB_ID}.out"
+    SUBMIT_DIR="${SLURM_SUBMIT_DIR:-$(pwd)}"
+    SLURM_OUT="${SUBMIT_DIR}/logs/filter_confidence_${SLURM_JOB_ID}.out"
     if [[ -f "$SLURM_OUT" ]]; then
         cp "$SLURM_OUT" "${INPUT_DIR}/transcript_filter_${SLURM_JOB_ID}.out"
         echo "[INFO] Copied Slurm output to ${INPUT_DIR}/transcript_filter_${SLURM_JOB_ID}.out"
+    else
+        echo "[WARN] Slurm stdout not found at: $SLURM_OUT"
     fi
 fi
+
 
