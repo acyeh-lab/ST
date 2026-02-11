@@ -266,7 +266,8 @@ sbatch plot_meanQS_confidence.sh /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singul
 - 46296543 - Deleted .csv.gz but kept .parquet - still missing "points" and "tables" in the .zarr file
 - Tried running with everything back in - get both "points" and "tables" in the .zarr file
 - 46307835 - Tried running with transcript_table.csv.gz renamed to "transcript_table_original.csv.gz" - doesn't work - no "points" and "tables" in the .zarr file
-- 46308518 - Tried running with two different .csv.gz files - the original transcript_table.csv.gz as well as transcript_table_original.csv.gz to see if can rename.
+- 46308518 - Tried running with two different .csv.gz files - the original transcript_table.csv.gz as well as transcript_table_original.csv.gz to see if can rename.  This works - so we can rename the old transcript_table to make way for the new one!
+- 46308583 - Try running with existing .zarr file (removed "points"), see if it overrides .zarr file of same name and adds "points". 
 
 - ** Conclusion - transcipts loaded are in the .csv.gz file.  Can try to set cutoff score to 20 initially.
 
