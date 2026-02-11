@@ -270,9 +270,10 @@ sbatch plot_meanQS_confidence.sh /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singul
 - 46308583 - Try running with existing .zarr file (removed "points"), see if it overrides .zarr file of same name and adds "points". It does add "points" and "transcripts" folder and is very fast.
 - 46308591 - edited points/transcripts/points.parquet/part.0.parquet file with "TEST" in the beginning.  Then re-run script and see if overrides this file. It does not.
 - 46308591 - deleted the part.0.parquet file. Then re-run script to see if reconstitutes this file.  It doesn't.
-- 46308602 - Now delted the entire "points" folder again and see if reconstitutes the folder including part.0.parquet.  It does
+- 46308602 - Now deleted the entire "points" folder again and see if reconstitutes the folder including part.0.parquet.  It does
 Summary: each run will generate a .zarr file based on rna/transcript_table.csv.gz.  We can have more than one .csv.gz file in the rna folder but it will only load "transcript_table.csv.gz". Also, it will not override existing .zarr file so these need to be removed.
-
+- 46308635 - filtered transcript_table.csv.gz by confidence score (keep >20) and renamed old file to "transcript_table_original.csv.gz".  Ran .zarr script again to regenerate new .zarr will try proseg after
+- 
 - ** Conclusion - transcipts loaded are in the .csv.gz file.  Can try to set cutoff score to 20 initially.
 
 - generate a new folder here: "g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/original_parquets" to put all the original transcript_table.parquet files as well as transcript_table.csv.gz in there.
