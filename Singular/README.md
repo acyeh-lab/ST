@@ -249,6 +249,7 @@ Schema([
   ('cell_id', Int64)
 ])
 ```
+
 So do we modify the meanQS or confidence score?  
 QS tells you how well something was read
 confidence_score tells you whether it should be believed
@@ -259,8 +260,12 @@ Now we build a side-by-side plot that can be run in shell - "plot_meanQS_confide
 sbatch plot_meanQS_confidence.sh /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/B01
 ```
 - We look at whether the .parquet file is dispensible for the g4x load:
-- PENDING 46281287 - run after renaming .parquet file -  Seems to work; we will probably need to make a separate folder with all original parquet files. 
-- PENDING 46292287 - run after deleting .parquest file
+- PENDING 46281287 - run after renaming .parquet file - Seems to work; we will probably need to make a separate folder with all original parquet files. 
+- PENDING 46292287 - run after deleting .parquet file - still sems to work.
+- PENDING 46294868 - run after deleting transcript_table.csv.gz - doesn't work anymore. Missing "points" and "tables" folder in the .zarr output. We can now try deleting the .csv.gz but keeping the parquet.
+- PENDING 46296543 - Deleted .csv.gz by kept .parquet - still missing "points" and "tables" in the .zarr file
+- TRY running with everything back in
+- ** Conclusion - transcipts loaded are in the .csv.gz file.  Can try to set cutoff score to 20 initially.
 
-- generate a new folder here: "g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/original_parquets" to put all the original parquet files in there
+- generate a new folder here: "g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/original_parquets" to put all the original transcript_table.parquet files as well as transcript_table.csv.gz in there.
 
