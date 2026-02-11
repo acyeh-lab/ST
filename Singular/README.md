@@ -260,11 +260,14 @@ Now we build a side-by-side plot that can be run in shell - "plot_meanQS_confide
 sbatch plot_meanQS_confidence.sh /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/B01
 ```
 - We look at whether the .parquet file is dispensible for the g4x load:
-- PENDING 46281287 - run after renaming .parquet file - Seems to work; we will probably need to make a separate folder with all original parquet files. 
-- PENDING 46292287 - run after deleting .parquet file - still sems to work.
-- PENDING 46294868 - run after deleting transcript_table.csv.gz - doesn't work anymore. Missing "points" and "tables" folder in the .zarr output. We can now try deleting the .csv.gz but keeping the parquet.
-- PENDING 46296543 - Deleted .csv.gz but kept .parquet - still missing "points" and "tables" in the .zarr file
-- PENDING tried running with everything back in - get both "points" and "tables" in the .zarr file
+- 46281287 - run after renaming .parquet file - Seems to work; we will probably need to make a separate folder with all original parquet files. 
+- 46292287 - run after deleting .parquet file - still sems to work.
+- 46294868 - run after deleting transcript_table.csv.gz - doesn't work anymore. Missing "points" and "tables" folder in the .zarr output. We can now try deleting the .csv.gz but keeping the parquet.
+- 46296543 - Deleted .csv.gz but kept .parquet - still missing "points" and "tables" in the .zarr file
+- Tried running with everything back in - get both "points" and "tables" in the .zarr file
+- 46307835 - Tried running with transcript_table.csv.gz renamed to "transcript_table_original.csv.gz" - doesn't work - no "points" and "tables" in the .zarr file
+- 46308518 - Tried running with two different .csv.gz files - the original transcript_table.csv.gz as well as transcript_table_original.csv.gz to see if can rename.
+
 - ** Conclusion - transcipts loaded are in the .csv.gz file.  Can try to set cutoff score to 20 initially.
 
 - generate a new folder here: "g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/original_parquets" to put all the original transcript_table.parquet files as well as transcript_table.csv.gz in there.
