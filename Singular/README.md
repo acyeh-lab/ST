@@ -263,8 +263,8 @@ sbatch plot_meanQS_confidence.sh /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singul
 - PENDING 46281287 - run after renaming .parquet file - Seems to work; we will probably need to make a separate folder with all original parquet files. 
 - PENDING 46292287 - run after deleting .parquet file - still sems to work.
 - PENDING 46294868 - run after deleting transcript_table.csv.gz - doesn't work anymore. Missing "points" and "tables" folder in the .zarr output. We can now try deleting the .csv.gz but keeping the parquet.
-- PENDING 46296543 - Deleted .csv.gz by kept .parquet - still missing "points" and "tables" in the .zarr file
-- TRY running with everything back in
+- PENDING 46296543 - Deleted .csv.gz but kept .parquet - still missing "points" and "tables" in the .zarr file
+- PENDING tried running with everything back in - get both "points" and "tables" in the .zarr file
 - ** Conclusion - transcipts loaded are in the .csv.gz file.  Can try to set cutoff score to 20 initially.
 
 - generate a new folder here: "g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/original_parquets" to put all the original transcript_table.parquet files as well as transcript_table.csv.gz in there.
