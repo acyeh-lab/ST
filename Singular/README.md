@@ -273,13 +273,13 @@ sbatch plot_meanQS_confidence.sh /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singul
 - 46308602 - Now deleted the entire "points" folder again and see if reconstitutes the folder including part.0.parquet.  It does
 Summary: each run will generate a .zarr file based on rna/transcript_table.csv.gz.  We can have more than one .csv.gz file in the rna folder but it will only load "transcript_table.csv.gz". Also, it will not override existing .zarr file so these need to be removed.
 - 46308635 - filtered transcript_table.csv.gz by confidence score (keep >20) and renamed old file to "transcript_table_original.csv.gz".  Ran .zarr script again to regenerate new .zarr will try proseg after
-- 
 - ** Conclusion - transcipts loaded are in the .csv.gz file.  Can try to set cutoff score to 20 initially.
 
 Wrote "filter_transcripts_confidence.sh" to filter rna/transcript_table.csv.gz
 ```
 sbatch filter_transcripts_confidence.sh /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01/rna
 ```
+- 46308895 - compare the .zarr file of confidence-filtered and non-confidence-filtered groups.
 
 - generate a new folder here: "g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/original_parquets" to put all the original transcript_table.parquet files as well as transcript_table.csv.gz in there.
 
