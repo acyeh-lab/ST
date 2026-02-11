@@ -290,7 +290,7 @@ Wrote "filter_transcripts_confidence.sh" to filter rna/transcript_table.csv.gz
 ```
 sbatch filter_transcripts_confidence.sh /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01/rna
 ```
-- 46308895 - compare the .zarr file of confidence-filtered and non-confidence-filtered groups.
+- 46308895 - compare the .zarr file of confidence-filtered and non-confidence-filtered groups. The filtered .zarr build is indeed smaller.
 
 - generate a new folder here: "g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/original_parquets" to put all the original transcript_table.parquet files as well as transcript_table.csv.gz in there.
 
