@@ -276,5 +276,10 @@ Summary: each run will generate a .zarr file based on rna/transcript_table.csv.g
 - 
 - ** Conclusion - transcipts loaded are in the .csv.gz file.  Can try to set cutoff score to 20 initially.
 
+Wrote "filter_transcripts_confidence.sh" to filter rna/transcript_table.csv.gz
+```
+sbatch filter_transcripts_confidence.sh /fh/fast/hill_g/Albert/scSeq_ST_Analyses/Singular_Pilot_2025/data/Run1_raw/Gut/g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/customer_output/A01/rna
+```
+
 - generate a new folder here: "g4-012-054-FC2-L001_5WtNECt2qiMdhgeK/original_parquets" to put all the original transcript_table.parquet files as well as transcript_table.csv.gz in there.
 
