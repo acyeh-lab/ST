@@ -35,8 +35,8 @@ Each folder contains the following:
  - **metrics** (QC + summary stats)
    - core_metrics.csv
    - per_area_metrics.csv
-   - # Does not have "protein_core_metrics.csv", which standard transcript platform has
-   - # Does not have "transcript_core_metrics.csv", which standard transcript platform has
+   - * Does not have "protein_core_metrics.csv", which standard transcript platform has
+   - * Does not have "transcript_core_metrics.csv", which standard transcript platform has
  - **protein** (usaully IF intensity renderings)
    - ATPase, CD11c, CD20, CD3, CD31, CD4, CD45, CD68, CD8, FOXP3, HLA-DR, Isotype, Ki67, PD1, PDL1, PanCK, asMA.thumbnail.jpg (these are protien level data)
  - **rna** 
@@ -48,10 +48,10 @@ Each folder contains the following:
    - cell_by_transcript.csv.gz
    - cell_metadata.csv.gz
    - feature_matrix.h5 (bundled feature matrix file, analogous to HDF5/AnnData/10x H5; also largest file)
-   - # NEW FILE "A01_dsReads.csv", which contains a matrix with x/y coordinate, sequence, cell-id, gene/probe used to generate the sequence.  Note that the reads were emultiplexed using the 10 bp sequence specific to the different J subfamilies for teh IgH or TCRb.  The actual sequence corresponds to the start of the CDR3-gap immediately downstream of a consensus J-region site selected for probe biding.  Per TUng, in-situ sequencing accuracy is ~95% over 50 cycles, there may be errors towards the end of the read.
-   - # NEW FILE "A01_cell_by_genes.csv", which contains a grid of cell IDs by J probe (e.g. A01-103257; J13tcrb) along with how many times each probe hit was detected.
-   - # Does not have "clustering_umap.csv.gz", which standard transcript platform has
-   - # Does not have "dgex.csv.gz", which standard transcript platform has,
+   - * NEW FILE "A01_dsReads.csv", which contains a matrix with x/y coordinate, sequence, cell-id, gene/probe used to generate the sequence.  Note that the reads were emultiplexed using the 10 bp sequence specific to the different J subfamilies for teh IgH or TCRb.  The actual sequence corresponds to the start of the CDR3-gap immediately downstream of a consensus J-region site selected for probe biding.  Per TUng, in-situ sequencing accuracy is ~95% over 50 cycles, there may be errors towards the end of the read.
+   - * NEW FILE "A01_cell_by_genes.csv", which contains a grid of cell IDs by J probe (e.g. A01-103257; J13tcrb) along with how many times each probe hit was detected.
+   - * Does not have "clustering_umap.csv.gz", which standard transcript platform has
+   - * Does not have "dgex.csv.gz", which standard transcript platform has,
   
 
 
