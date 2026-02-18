@@ -13,7 +13,7 @@ run_spatial_singular_umap.sh # compares proseg umap vs. default umap
 ## File Format
 We download the file format via secure FTP, with each row (e.g. for the 4x8 slots, each folder contain a row of 8) getting a separate file name.
 Gut samples we got 4 rows (from 1 48x slide):
-g4-012-054-FC2-L001_5WtNECt2qiMdhgeK -> customer_output -> A01-H01
+g4-035_227_fc3_g4-035-227-FC3-L001_460b41c3d1c3e91a3 -> A01-H01
 
 Each folder contains the following:
  - **diagnostics**
