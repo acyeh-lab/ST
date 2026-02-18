@@ -4,10 +4,7 @@ Tips on how to run / analyze ST using the Singular Platform with DirectSeq.
 Overall workflow:
 ```
 singular_zarr.sh # builds zarr file after usign g4x() pull command
-  ↓
-Proseg_Singular.sh # builds proseg mask
-  ↓
-run_spatial_singular_umap.sh # compares proseg umap vs. default umap
+* Can't really build proseg as don't have transcripts to use!
 ```
 
 ## File Format
