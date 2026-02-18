@@ -3,8 +3,10 @@ Tips on how to run / analyze ST using the Singular Platform with DirectSeq.
 
 Overall workflow:
 ```
-singular_zarr.sh # builds zarr file after usign g4x() pull command
+singular_zarr.sh # builds zarr file after usign g4x() pull command similar to that used with the standard transcripts processing.
+
 * Can't really build proseg as don't have transcripts to use!
+* Don't know how this may impact directseq results though...
 ```
 
 ## File Format
