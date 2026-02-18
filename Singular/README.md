@@ -31,8 +31,12 @@ Each folder contains the following:
    - _nuclear.ome.tiff
    - _run_metadata.json 
  - **h_and_e** (lightweight previews)
-   - h_ane_e_thumbnail.jpg
+   - h_and_e_thumbnail.jpg
    - nulear_thumbnail.png
+   - eosin_thumbnail.png
+   - h_and_e.jp2
+   - nuclear.jp2
+   - eosin.jp2
  - **metrics** (QC + summary stats)
    - core_metrics.csv
    - per_area_metrics.csv
