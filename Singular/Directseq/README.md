@@ -1,10 +1,10 @@
 # Spatial Imaging with Direct Seq
 Tips on how to run / analyze ST using the Singular Platform with DirectSeq. 
 
-Overall workflow:
+Trial/error:
 ```
 singular_zarr.sh # builds zarr file after usign g4x() pull command similar to that used with the standard transcripts processing.
-
+* Resulting umap is a ball - so this is not the right way of building the spatial object.  Most likely, the PR doesn't use the Directseq format.
 * Can't really build proseg as don't have transcripts to use!
 * Don't know how this may impact directseq results though...
 ```
