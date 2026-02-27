@@ -5,7 +5,7 @@ Overall workflow:
 ```
 filter_transcripts_confidence.sh # Optional if want to filter transcripts based on confidence - default set to 20 from rna/transcript_table.csv.gz file
   ↓
-singular_zarr.sh # builds zarr file after usign g4x() pull command
+singular_zarr.sh # builds zarr file after usign g4x() pull command ** Note the micromamba environment - must write out in zarr v2 for proseg to read (see .yaml file)
   ↓
 Proseg_Singular.sh # builds proseg mask
   ↓
