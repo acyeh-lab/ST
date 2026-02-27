@@ -23,9 +23,9 @@
 
 #SBATCH --job-name=g4x_to_zarr
 #SBATCH --partition=campus-new
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=128G
-#SBATCH --time=2:00:00
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=256G
+#SBATCH --time=4:00:00
 #SBATCH --output=logs/%x-%j.out
 #SBATCH --error=logs/%x-%j.err
 
@@ -53,14 +53,17 @@ INPUT_DIR="$1"
 
 # ---- Point directly at the micromamba env prefix (no activation needed) ----
 # Set this to the env that has spatialdata + spatialdata-io with g4x support.
-ENV_PREFIX="/home/ayeh/micromamba/envs/spatial-singular"
+ENV_PREFIX="/home/ayeh/micromamba/envs/spatial-singular-zarr_v2" # This exports zarr v2, which is what proseg is compatible with
 
 # Threading: many libs will try to use all cores; keep it reasonable / predictable.
-export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK:-4}
+export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK:-8}
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 export NUMEXPR_NUM_THREADS=1
 export PYTHONUNBUFFERED=1
+export PYTHONNOUSERSITE=1
+export MPLCONFIGDIR="/tmp" #temp cache storage to reduce errors
+unset PYTHONPATH
 
 # Make sure env python exists
 [[ -x "$ENV_PREFIX/bin/python" ]] || { echo "[ERROR] Missing $ENV_PREFIX/bin/python" >&2; exit 127; }
@@ -70,38 +73,77 @@ echo "[INFO] Start: $(date)" >&2
 echo "[INFO] INPUT_DIR: $INPUT_DIR" >&2
 echo "[INFO] ENV_PREFIX: $ENV_PREFIX" >&2
 echo "[INFO] Using python: $ENV_PREFIX/bin/python" >&2
-"$ENV_PREFIX/bin/python" -V >&2
-
-# Optional sanity check: show which spatialdata_io we’re using
-"$ENV_PREFIX/bin/python" - <<'PY'
-import spatialdata_io as sio
-print("[python] spatialdata_io version:", getattr(sio, "__version__", "unknown"))
-print("[python] has g4x:", hasattr(sio, "g4x"))
-PY
+"$ENV_PREFIX/bin/python" -s -V >&2
 
 # Run ingestion
-"$ENV_PREFIX/bin/python" - <<PY
-import os, sys
+"$ENV_PREFIX/bin/python" -s - <<PY
+import sys
 from pathlib import Path
-from spatialdata_io import g4x
+import pandas as pd
 
-os.environ["TERM"] = "dumb"
+# Force pandas to avoid pyarrow-backed ArrowStringArray
+pd.options.mode.string_storage = "python"
+try:
+    pd.options.mode.dtype_backend = "numpy_nullable"
+except Exception:
+    pass
+print("[python] pandas:", pd.__version__, file=sys.stderr)
+print("[python] pandas string_storage:", pd.options.mode.string_storage, file=sys.stderr)
+
+import spatialdata, zarr
+print("[python] python:", sys.executable, file=sys.stderr)
+print("[python] spatialdata:", spatialdata.__version__, spatialdata.__file__, file=sys.stderr)
+print("[python] zarr:", zarr.__version__, zarr.__file__, file=sys.stderr)
+
+# Disable Pillow decompression-bomb protection for trusted whole-slide images
+import PIL.Image
+PIL.Image.MAX_IMAGE_PIXELS = None
+PIL.Image._decompression_bomb_check = lambda size: None
+
+print("[python] PIL MAX_IMAGE_PIXELS =", PIL.Image.MAX_IMAGE_PIXELS, file=sys.stderr)
+print("[python] PIL _decompression_bomb_check =", PIL.Image._decompression_bomb_check, file=sys.stderr)
+
+from spatialdata_io import g4x
+import spatialdata_io as sio, inspect
+print("[python] spatialdata_io:", getattr(sio, "__version__", "?"), sio.__file__, file=sys.stderr)
+print("[python] g4x source:", inspect.getsourcefile(g4x), file=sys.stderr)
+
+
+# Added this to prevent nullable string array writing error
+import anndata as ad
+ad.settings.allow_write_nullable_strings = True
+print("[python] allow_write_nullable_strings:", ad.settings.allow_write_nullable_strings, file=sys.stderr)
 
 input_dir = Path(r"$INPUT_DIR")
-
 print(f"[python] Reading: {input_dir}", file=sys.stderr)
+
+import shutil
+
+
+zarr_out = input_dir / (input_dir.name + ".zarr")
+
+# Clean slate BEFORE g4x
+if zarr_out.is_dir():
+    shutil.rmtree(zarr_out)
+
 sdata = g4x(input_dir)
 
-# Try to infer the Zarr path in the most common pattern:
-# <input_dir>/<basename>.zarr (e.g., A01/A01.zarr)
-zarr_guess = input_dir / (input_dir.name + ".zarr")
-if zarr_guess.exists():
-    print(f"[python] Zarr store exists: {zarr_guess}", file=sys.stderr)
+if zarr_out.exists():
+    root = sorted([p.name for p in zarr_out.iterdir()])[:50]
+    print("[python] root listing:", root, file=sys.stderr)
+
+    if (zarr_out / ".zgroup").exists():
+        print("[python] FINAL: Zarr v2 (.zgroup present)", file=sys.stderr)
+    elif (zarr_out / "zarr.json").exists():
+        print("[python] FINAL: Zarr v3 (zarr.json present)", file=sys.stderr)
+    else:
+        print("[python] FINAL: unknown format (no .zgroup or zarr.json)", file=sys.stderr)
 else:
-    print(f"[python] Zarr store not found at expected path: {zarr_guess}", file=sys.stderr)
-    print("[python] (This may be normal depending on spatialdata_io version / lazy materialization.)", file=sys.stderr)
+    print("[python] No zarr_out produced by g4x()", file=sys.stderr)
+
 
 print("[python] Done.", file=sys.stderr)
+
 PY
 
 echo "[INFO] End: $(date)" >&2
