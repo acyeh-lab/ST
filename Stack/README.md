@@ -4,6 +4,13 @@ For example, STAlign has their own stack: https://github.com/JEFworks-Lab/STalig
 
 For Singular:
 ```
+python -m pip install --user --upgrade --force-reinstall \
+numpy==2.2.6 \
+scipy==1.13.1 \
+pandas==3.0.1 \
+numba==0.61.2
+```
+```
 micromamba activate spatial-singular
 cd /fh/fast/hill_g/Albert/Collaboration-Spatial_Seq_Biopsy_Samples
 git clone https://github.com/scverse/spatialdata-io.git
