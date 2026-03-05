@@ -1,9 +1,6 @@
-Spatial stack that works (as of 3/5/26):
+Spatial stacks vary depending on the software used.
 
-numpy==2.2.6 
-scipy==1.13.1 
-pandas==3.0.1 
-numba==0.61.2
+For example, STAlign has their own stack: https://github.com/JEFworks-Lab/STalign/blob/main/pipenv-requirements.txt
 
 For Singular:
 ```
