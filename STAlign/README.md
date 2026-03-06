@@ -64,6 +64,11 @@ to
   "language": "python"
 }
 ```
+Now in the jupyter notebook, the following command should work:
+```
+from STalign import STalign 
+```
+
 
 # STalign + SpatialData Workflow
 
