@@ -23,12 +23,12 @@ python -s -m ipykernel install \
 ```
 
 
-Now make Jupyter kernel laucnh Python with "-s"
+Now make Jupyter kernel laucnh Python with "-s" by finding where the "kernel.json" file is.
 ```
 jupyter kernelspec list
 ```
 
-Choose the directory with stalign and 
+Choose the directory with stalign, cd into it, and edit the "kernel.json"
 
 ```
 vi kernel.json
