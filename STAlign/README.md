@@ -65,8 +65,6 @@ to
 }
 ```
 
-
-
 # STalign + SpatialData Workflow
 
 This workflow separates **spatial analysis** and **image registration** into two micromamba environments to avoid dependency conflicts.
