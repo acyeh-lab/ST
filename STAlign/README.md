@@ -72,7 +72,7 @@ This workflow separates **spatial analysis** and **image registration** into two
 | Task | Environment |
 |-----|-------------|
 | Spatial transcriptomics analysis (Scanpy / SpatialData / Squidpy) | `spatial-singular` |
-| Image registration with STalign | `stalign-clean` |
+| Image registration with STalign | `stalign` |
 
 ---
 
