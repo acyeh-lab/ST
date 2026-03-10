@@ -19,7 +19,7 @@ Then create the jupyter notebook environment name:
 python -s -m ipykernel install \
   --user \
   --name stalign \
-  --display-name "Python (stbalign)"
+  --display-name "Python (stalign)"
 ```
 
 
