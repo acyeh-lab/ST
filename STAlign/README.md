@@ -3,8 +3,8 @@ Note that main page is here: https://github.com/JEFworks-Lab/STalign?tab=readme-
 
 
 ```
-micromamba create -n stbalign -c conda-forge python=3.11 pip -y
-micromamba activate stbalign
+micromamba create -n stalign -c conda-forge python=3.11 pip -y
+micromamba activate stalign
 python -s -m pip install --upgrade pip
 python -s -m pip install --upgrade "git+https://github.com/JEFworks-Lab/STalign.git"
 python -s -m pip install --no-user --force-reinstall \
@@ -18,7 +18,7 @@ Then create the jupyter notebook environment name:
 ```
 python -s -m ipykernel install \
   --user \
-  --name stbalign \
+  --name stalign \
   --display-name "Python (stbalign)"
 ```
 
